@@ -25,3 +25,5 @@ else
     echo "got: '$files'"
     echo "expected: '$expected'"
 fi
+
+rm -f *.ext
