@@ -4,7 +4,7 @@
 
 SAVEIFS=$IFS
 
-IFS=$(echo -e "\n")
+IFS=$(echo -e "\n\b")
 
 if [[ $# -ne 1 ]]
     then
@@ -18,7 +18,8 @@ duplicate_names=`find "$directory_to_scan" -name "*(1).*"`
 
 for file in $duplicate_names
     do
-    echo $file
+    original_name="${file/(1)/}"
+    echo "'$file'" "'$original_name'"
 done
 
 IFS=$SAVEIFS
