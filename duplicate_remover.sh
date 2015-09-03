@@ -19,7 +19,10 @@ duplicate_names=`find "$directory_to_scan" -name "*(1).*"`
 for file in $duplicate_names
     do
     original_name="${file/(1)/}"
-    echo "'$file'" "'$original_name'"
+    if diff "$original_name" "$file" &> /dev/null
+        then
+        rm "$file"
+    fi
 done
 
 IFS=$SAVEIFS
