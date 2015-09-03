@@ -1,0 +1,4 @@
+A simple tool for removing duplicate files.
+
+It assumes they are named file(1).ext and file.ext, but does check
+that they are identical files.
