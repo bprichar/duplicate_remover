@@ -8,4 +8,9 @@ if [[ $# -ne 1 ]]
     exit 1
 fi
 
-directory_to_scan=$1
+directory_to_scan="$1"
+
+for file in `find "$directory_to_scan" -name "*(1).*"`
+    do
+    echo $file
+done
